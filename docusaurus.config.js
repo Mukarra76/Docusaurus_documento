@@ -1,13 +1,11 @@
-const math = require('remark-math');
-const katex = require('rehype-katex');
-
-
-
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -41,13 +39,14 @@ const config = {
           path: 'docs',
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl:
+            'https://github.com/Mukarra76/Docusaurus_documento/tree/main/docs',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Mukarra76/Docusaurus_documento/tree/main/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
